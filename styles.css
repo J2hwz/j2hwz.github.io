@@ -165,12 +165,29 @@ footer {
 
 .research-pic-caption {
     margin-top: 10px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
 .research-container {
-    width: 450px;
+    width: 600px;
     margin: auto;
+}
+
+.sarc-description {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-description {
+    /* display: flex;
+    justify-content: center; */
+}
+
+.project-pic {
+    width: 500px;
+    border: 2px solid #284275;
 }
 
 /* Misc Section */
