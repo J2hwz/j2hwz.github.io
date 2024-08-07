@@ -11,7 +11,7 @@ body {
 
 p {
     text-align: justify;
-}
+  }
 
 a {
     color: #04a2d6;
@@ -68,13 +68,12 @@ h3 {
     flex-direction: row;
     /* background-color: lightyellow; */
     align-items: center;
-    justify-content: space-around;
-    gap: 3rem;
+    justify-content: space-evenly;
+    gap: 0.5rem;
 }
 
 .nav-item {
     text-align: center;
-    width: 18%;
 }
 
 .nav-hover:hover {
@@ -109,6 +108,7 @@ footer {
     align-items: center;
     justify-content: space-around;
     gap: 20px;
+    height: 2rem;
 }
 
 .footer-item {
@@ -124,8 +124,12 @@ footer {
     vertical-align: middle;
 }
 
-.footer-item:hover,
 .footer-icon:hover {
+    height: 2rem;
+    background-color: #c5cfdb;
+}
+
+.footer-item:hover {
     background-color: #c5cfdb;
     color: black;
     font-weight: bold;
@@ -133,18 +137,14 @@ footer {
 
 /* About Section*/
 
-.profile-container {
-    /* margin-top: 40px; */
-}
-
 .profile-pic {
     display: flex;
     width: 800px;
-    height: 400px;
+    aspect-ratio: 2 / 1;
     object-fit: cover;
     margin: auto;
     mask-image: linear-gradient(to top, transparent, #000 30%);
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .about-container {
@@ -158,7 +158,7 @@ footer {
 .research-pic {
     display: flex;
     width: 500px;
-    height: 500px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     margin: auto;
 }
@@ -192,15 +192,22 @@ footer {
 
 /* Misc Section */
 
-.misc-wrapper {
+.misc-container {
     width: 600px;
     margin: auto;
 }
 
+.youtube-player {
+    aspect-ratio: 12 / 7;
+    margin: auto;
+    display: block;
+}
+
 .fav-pic {
-    height: 250px;
-    width: 600px;
+    width: 500px;
+    aspect-ratio: 12 / 5;
     object-fit: cover;
     margin: auto;
+    display: block;
     /* margin-bottom: 20px; */
 }

@@ -1,0 +1,40 @@
+@media screen and (max-width: 666px) {
+  .nav-container,
+  .socials-container,
+  .about-container,
+  .research-container,
+  .misc-container {
+    width: 90%;
+  }
+
+  .nav-item {
+    float: left;
+  }
+}
+
+@media screen and (min-width: 667px) {
+  .nav-item {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 888px) {
+  .profile-pic {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 888px) {
+  .profile-pic {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .research-pic,
+  .project-pic,
+  .youtube-player,
+  .fav-pic {
+    width: 90%;
+  }
+}
