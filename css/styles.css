@@ -164,7 +164,7 @@ footer {
 }
 
 .research-pic-caption {
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -174,20 +174,35 @@ footer {
     margin: auto;
 }
 
-.sarc-description {
+.project-name {
+    margin-top: 35px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #7e8da1;
+}
+
+.project-description {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.project-description {
-    /* display: flex;
-    justify-content: center; */
-}
+/* .project-description {
+    display: flex;
+    justify-content: center; 
+} */
 
 .project-pic {
     width: 500px;
-    border: 2px solid #284275;
+    /* aspect-ratio: 5 / 2; */
+    /* object-fit: cover;  */
+    border: 1.5px solid #305d87;
+    margin-bottom: 15px;
+}
+
+.project-text {
+    margin-top: 0px;
+    margin-bottom: 15px;
 }
 
 /* Misc Section */
