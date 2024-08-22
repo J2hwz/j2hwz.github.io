@@ -5,22 +5,51 @@ html {
     font-family: Alegreya Sans;
 }
 
+:root {
+    --background-color-light: rgb(255, 252, 246);
+    --text-color-light: #000000;
+    --background-color-dark: #3f5f6c;
+    --text-color-dark: #ffffff;
+
+    --footer-color: #284275;
+    --footer-background: #c5cfdb;
+
+    --hyperlink-color: #04a2d6;
+    --hyperlink-hover: #ecdbad53;
+
+    --project-color: #7e8da1;
+}
+
 body {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
     margin: 0;
 }
+
+.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+    --footer-color: #ffffff;
+    --footer-background: #134150;
+
+    --hyperlink-color: #5ad6ff;
+    --hyperlink-hover: #e8bf5053;
+
+    --project-color: rgb(203, 228, 255);
+  }
 
 p {
     text-align: justify;
   }
 
 a {
-    color: #04a2d6;
+    color: var(--hyperlink-color);
     font-weight: 500;
     text-decoration: none;
 }
 
 a:hover {
-    background-color: #fffced;
+    background-color: var(--hyperlink-hover);
     cursor: pointer;
 }
 
@@ -89,7 +118,7 @@ footer {
     width: 100%;
     padding-top: 20px;
     padding-bottom: 15px;
-    background-color: #c5cfdb;
+    background-color: var(--footer-background);
     border-width: 0;
 }
 
@@ -115,22 +144,23 @@ footer {
     font-size: 26px;
     text-align: center;
     width: 10%;
-    color: #284275;
+    color: var(--footer-color);
 }
 
 .footer-icon {
     cursor: pointer;
     height: 1.8rem;
     vertical-align: middle;
+
 }
 
 .footer-icon:hover {
     height: 2rem;
-    background-color: #c5cfdb;
+    background-color: var(--footer-background);
 }
 
 .footer-item:hover {
-    background-color: #c5cfdb;
+    background-color: var(--footer-background);
     color: black;
     font-weight: bold;
 }
@@ -178,7 +208,7 @@ footer {
     margin-top: 35px;
     font-weight: bold;
     font-size: 20px;
-    color: #7e8da1;
+    color: var(--project-color);
 }
 
 .project-description {
