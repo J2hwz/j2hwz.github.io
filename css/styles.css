@@ -6,7 +6,7 @@ html {
 }
 
 :root {
-    --background-color-light: rgb(255, 252, 246);
+    --background-color-light: rgba(255, 252, 246, 0.6);
     --text-color-light: #000000;
     --background-color-dark: #3f5f6c;
     --text-color-dark: #ffffff;
