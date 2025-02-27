@@ -14,6 +14,9 @@ html {
     --footer-color: #284275;
     --footer-background: #c5cfdb;
 
+    --nav-hover-color: black;
+    --nav-hover-background: rgba(255, 252, 246, 0.6);
+
     --hyperlink-color: #04a2d6;
     --hyperlink-hover: #ecdbad53;
 
@@ -31,6 +34,9 @@ body {
     color: var(--text-color-dark);
     --footer-color: #ffffff;
     --footer-background: #134150;
+
+    --nav-hover-color: white;
+    --nav-hover-background: #3f5f6c;
 
     --hyperlink-color: #5ad6ff;
     --hyperlink-hover: #e8bf5053;
@@ -106,8 +112,8 @@ h3 {
 }
 
 .nav-hover:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--nav-hover-background);
+    color: var(--nav-hover-color);
     font-weight: bold;
 }
 
