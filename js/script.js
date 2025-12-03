@@ -1,5 +1,11 @@
 var darkmode;
 
+// Load header and footer
+$(function(){
+  $("#header").load("./header.html"); 
+  $("#footer").load("./footer.html"); 
+});
+
 // Remember user's setting 
 function toggleDarkMode() {
     let isDark = document.body.classList.toggle('dark-mode');
@@ -23,3 +29,5 @@ document.querySelector('.dark-mode-butto').addEventListener('click', function(ev
     event.preventDefault(); // Prevent the default link behavior
     toggleDarkMode();
 });
+
+// TODO retain "darker"/"lighter" text across pages

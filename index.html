@@ -13,36 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     
     <!-- Loading js libraries -->
+    <script src="/libraries/jquery-3.7.1.min.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/static/libraries/jquery-3.7.1.min.js"></script>
-
+    
     <title>About | Joshua Hew</title>
 </head>
 
 <body>
-    <header class="header-container">
-        <div class="title-container">
-            <div>
-                <p class="title-text">joshua w. z. hew</p>
-            </div>
-        </div>
-        <nav class="nav-container">
-            <div class="nav-item" style="font-weight: bold;">
-                about
-            </div>
-            <div class="nav-item">
-                <a class="nav-hover" href="./research.html">research</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-hover" href="./misc.html">miscellaneous</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-hover dark-mode-button" onclick="toggleDarkMode()">darker</a>
-                <!-- &#127763; moon emoji -->
-                <!-- <button onclick="toggleDarkMode()">Toggle Dark Mode</button> -->
-            </div>
-        </nav>
-    </header>
+    <header id="header" class="header-container"></header>
     <main>
         <img class="profile-pic" src="./images/joshua_landscape.jpg" alt="profile">
         <div class="about-container">
@@ -53,12 +31,12 @@
             </p>
 
             <p>
-                I apply these principles to applied phenomena like learned helplessness (a potential breakdown of our causal models), non-literal language (an inference of social intent), and belief change. 
+                I apply these principles to applied phenomena like learned helplessness, non-literal language, and belief change. 
                 To answer these questions, I employ a combination of behavioural experiments, online surveys, and text mining of online data.
             </p>
 
             <p>
-                This work builds on my background in Philosophy and Psychology (University of Edinburgh). 
+                Previously, I studied Philosophy and Psychology at the University of Edinburgh. 
                 My dissertation, supervised by <a href="https://www.bramleylab.ppls.ed.ac.uk/" target="_blank" rel="noopener noreferrer">Neil Bramley</a>, explored causal inference in learned helplessness. 
                 I have also been a research assistant for <a href="https://ccdedinburgh.uk/" target="_blank" rel="noopener noreferrer">Zachary Horne</a>, investigating consensus judgements and belief persistence, 
                 and for <a href="https://martincorley.org/" target="_blank" rel="noopener noreferrer">Martin Corley</a>, where I used a self-paced reading task to study sarcasm comprehension.
@@ -71,17 +49,7 @@
             <p>You can email me at joshua.hew.25 [at] ucl.ac.uk.</p>
         </div>
     </main>
-    <footer>
-        <div class="socials-container">
-            <a class="footer-item" href="documents/JWZH-CV-2025-Nov.pdf">cv</a>
-            <a href="https://linkedin.com/in/joshua-hew-335374179" target="_blank" rel="noopener noreferrer">
-                <img class="footer-icon" src="./assets/linkedin.png" alt="My LinkedIn Profile"/>
-            </a>
-            <a href="https://github.com/J2hwz" target="_blank" rel="noopener noreferrer">
-                <img class="footer-icon" src="./assets/github.png" alt="My Github Profile"/>
-            </a>
-        </div>
-    </footer>
+    <footer id="footer"></footer>
 </body>
 
 </html>

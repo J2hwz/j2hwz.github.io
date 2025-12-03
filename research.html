@@ -13,138 +13,143 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     
     <!-- Loading js libraries -->
+    <script src="/libraries/jquery-3.7.1.min.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/static/libraries/jquery-3.7.1.min.js"></script>
 
     <title>Research | Joshua Hew </title>
 </head>
 
 <body>
-    <header class="header-container">
-        <div class="title-container">
-            <div>
-                <p class="title-text">joshua w. z. hew</p>
-            </div>
-        </div>
-        <nav class="nav-container">
-            <div class="nav-item">
-                <a class="nav-hover" href="./index.html">about</a>
-            </div>
-            <div class="nav-item" style="font-weight: bold;">
-                research
-            </div>
-            <div class="nav-item">
-                <a class="nav-hover" href="./misc.html">miscellaneous</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-hover dark-mode-button" onclick="toggleDarkMode()">darker</a>
-                <!-- &#127763; moon emoji -->
-                <!-- <button onclick="toggleDarkMode()">Toggle Dark Mode</button> -->
-            </div>
-        </nav>
-    </header>
+    <header id="header" class="header-container"></header>
     <main>
-        <div>
-            <img class="research-pic" src="./images/joshua_posterpresentation.jpg" alt="profile">
-            <p class="research-pic-caption">
-                Me at my first conference presenting my first poster!
-            </p>
-            <div class="research-container">
+        <img class="research-pic" src="./images/joshua_posterpresentation.jpg" alt="profile">
+        <p class="research-pic-caption">
+            Me at my first conference presenting my first poster!
+        </p>
+
+        <div class="research-container">
+            <h3>Ongoing projects</h3>
+
+            <div class="project">
+                <div class="project-name">
+                    Causal Inference and Learned Helplessness
+                    <hr>
+                </div>
+                <div class="project-description">
+                    <img class="project-pic" src="./projects/helplessness25/sliders.png" alt="helplessness-sliders">
+                    <p class="project-text">
+                        I looked at how people infer causal structure in environments where they have little control i.e. their actions seldom lead to desired outcomes, and/or little reward for successful action.
+                        We found that low control led to subjective feelings of uncontrollability, and passive behavioural strategies, even when the environment was objectively controllable (learned helplessness).
+                        I'm currently conducting additional analyses to look at how effective participant's individual actions were. 
+                    </p>
+                    <p class="project-text" style=" width: 100%; left;">
+                        Causal Inference and Learned Helplessness &nbsp;
+                        <a href="./projects/helplessness25/helplessness_dissertation.pdf" target="_blank" rel="noopener noreferrer">dissertation pdf</a> &nbsp;
+                        <a href="https://eco.ppls.ed.ac.uk/~s2144522/exp1_demo/" target="_blank" rel="noopener noreferrer">demo</a> &nbsp;
+                        <a href="https://osf.io/9dzv5/" target="_blank" rel="noopener noreferrer">osf</a>                             
+                    </p>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-name">
+                    Non-literal Language and Social Cognition
+                    <hr>
+                </div>
+                <div class="project-description">
+                    <img class="project-pic" src="./projects/sarcasm24/sarcasm24_img.png" alt="sarc-inside-out">
+                    <p class="project-text">
+                        <b>Sarcasm on social media</b> 
+                        We investigated the prevalence of both prosidic-mimicking [e.g. :) :/ :O or amaaaaaazing] and semantic markers in sarcastic comments on Reddit. 
+                        We found that a host of cues which mimic prosody, and other aspects of figures of speech, were inconsistent predictors of announced sarcasm. 
+                        In contrast, when talking about sociomoral topics such as politics or race, users were more likely to tag their comments with "/s". 
+                        This suggests that users are more likely to announce sarcasm in text-based conversations where misinterpretation would be socially detrimental.
+                        This project began its life as my undergraduate coursework for Zachary Horne's course Big Data and Psychological Science. 
+                    </p>
+                    <p class="project-text">
+                        Hew, J., Tarighat, A., Corley, M., & Horne, Z. (2024). Examining structural and semantic predictors of announced sarcasm on r/AskReddit. Proceedings of the 46th Annual Meeting of the Cognitive Science Society. &nbsp;
+                        <a href="https://escholarship.org/uc/item/34k6x5jk#main" target="_blank" rel="noopener noreferrer">pdf</a> &nbsp;
+                        <a href="./projects/sarcasm24/Sarcastic_Speech_CogSci_2024_Poster v2 copy.pdf">poster</a> &nbsp;
+                        <a href="https://osf.io/s2xyn/" target="_blank" rel="noopener noreferrer">osf</a>                             
+                    </p>
+                    <blockquote style="margin-top: 15px; font-style: italic;" class="project-text">
+                        <b>Direct speech</b>: Karen was working late at night and struggled  to stay awake. William told Karen: "Falling asleep at a laptop is always fun." Karen decided to head to bed.  <br> 
+                        <b>Indirect speech</b>: Karen was working late at night and struggled to stay awake. William told Karen that falling asleep at a laptop was always fun. Karen decided to head to bed. 
+                    </blockquote>
+                    <p class="project-text">
+                        <b>Sarcasm and direct speech</b> 
+                        In a follow-up experiment, we investigated whether people were more likely to interpret direct speech facilitated sarcastic interpretations compared to indirect speech.
+                        This draws from concepts like embodied cognition, mental simulation, and speech-like markers in speech. 
+                        We found that sarcastic direct speech was rated as more sarcastic than indirect speech, but found no differences in reading times on self-paced reading task. &nbsp;
+                        <!-- TODO: add materials and write findings up -->
+                        <a href="https://eco.ppls.ed.ac.uk/~s2144522/exp1_demo/" target="_blank" rel="noopener noreferrer">demo</a> &nbsp;
+                    </p>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-name">
+                    Consensus Judgements under Different Types of Evidence
+                    <hr>
+                </div>
+                <div class="project-description">
+                    <blockquote style="margin-top: 15px; font-style: italic;" class="project-text">
+                        97% of climate scientists agree that humans are causing global warming. <br> 
+                        But only 64% of adults believe global warming is caused by human activites.
+                    </blockquote>
+                    <p class="project-text">
+                        This project investigates the factors that influence our consensus judgements given different evidence, whether that be amount of agreement, source of testimony, or topic of discussion. 
+                        A key aim of this project is to improve our understanding of how to communicate scientific findings on pressing issues such as climate change. 
+                        As such, I will run an experimental study and create a series of research-backed short video essays/animations to increase awareness on these topics. 
+                        This project is funded by a <a href="https://carnegie-trust.org/award-schemes/vacation-scholarships/" target="_blank" rel="noopener noreferrer">Carnegie Vacation Scholarship</a> (£3800) and the <a href="https://www.edinburghneuroscience.ed.ac.uk/scholarshipsfunding/scholarship-our-mind-programme" target="_blank" rel="noopener noreferrer">Our Minds Programme</a> (£1600).
+                    </p>
+                    <p class="project-text" style=" width: 100%; left;">
+                        Experiment 1 &nbsp; 
+                        <a href="./projects/consensus24/consensus_exp1_poster.pdf"">poster</a> &nbsp;
+                        <a href="https://osf.io/8ywaj/" target="_blank" rel="noopener noreferrer">osf</a>
+                    </p>
+                    <p class="project-text">
+                        In the distant future, we plan to carry out follow-up experiments with different manipulations
+                        and look at naturalistic data from r/Showerthoughts or r/The10thDentist containing posts with wide agreement/disagreement. 
+                    </p>
+                </div>
+
+                <h3>Past projects</h3>
+
                 <div class="project">
                     <div class="project-name">
-                        Examining Structural and Semantic Predictors of Announced Sarcasm on r/AskReddit
+                        Identifying Unsafe Content in Role-Playing Video Game Dialogue
                         <hr>
                     </div>
                     <div class="project-description">
-                        <img class="project-pic" src="./projects/sarcasm24/sarcasm24_img.png" alt="sarc-inside-out">
+                        <img class="project-pic" style="aspect-ratio: 5 / 2; object-fit: cover; object-position: 50% 0;" src="./projects/games24/persona5.jpg" alt="persona5">
                         <p class="project-text">
-                            We investigated the prevalence of both prosidic-mimicking [e.g. :) :/ :O or amaaaaaazing] and semantic markers in sarcastic comments on Reddit. 
-                            We found that a host of cues which mimic prosody, and other aspects of figures of speech, were inconsistent predictors of announced sarcasm. 
-                            In contrast, when talking about sociomoral topics such as politics or race, users were more likely to tag their comments with "/s". 
-                            This suggests that users are more likely to announce sarcasm in text-based conversations where misinterpretation would be socially detrimental.
-                            This project began its life as my undergraduate coursework for Zachary Horne's course Big Data and Psychological Science. 
-                        </p>
-                        <p class="project-text">
-                            Hew, J., Tarighat, A., Corley, M., & Horne, Z. (2024). Examining structural and semantic predictors of announced sarcasm on r/AskReddit. Proceedings of the 46th Annual Meeting of the Cognitive Science Society. &nbsp;
-                            <a href="https://escholarship.org/uc/item/34k6x5jk#main" target="_blank" rel="noopener noreferrer">pdf</a> &nbsp;
-                            <a href="./projects/sarcasm24/Sarcastic_Speech_CogSci_2024_Poster v2 copy.pdf">poster</a> &nbsp;
-                            <a href="https://osf.io/s2xyn/" target="_blank" rel="noopener noreferrer">osf</a>                             
+                            I work in a team led by <a href="https://www.jingjieli.me/" target="_blank" rel="noopener noreferrer">Jingjie Li</a> exploring unsafe issues such as violence and abuse in games such as Persona 5. 
+                            I work mostly on the theory-building aspect of the pipeline, developing a taxonomy to categorise these issues for annotations.
+                            Our end goal is to explore how existing LLM’s fair when identifying unsafe content in video game dialogue. 
+                            We use data from the 
+                            <a href="https://correlation-machine.com/VideoGameDialogueCorpus/" target="_blank" rel="noopener noreferrer">Video Game Dialogue Corpus</a> and are funded by Edinburgh's 
+                            <a href="https://www.ed.ac.uk/news/2023/university-to-lead-new-era-of-generative-ai?utm_source=linkedin&utm_medium=organic_post&utm_campaign=cam_research_comms&utm_term=&utm_content=gail_ai_launch" target="_blank" rel="noopener noreferrer">Generative AI Laboratory (GAIL)</a>.
                         </p>
                     </div>
                 </div>
 
                 <div class="project">
                     <div class="project-name">
-                        Consensus Judgements under Different Types of Evidence
+                        Misc. undergraduate research assistant work
                         <hr>
                     </div>
                     <div class="project-description">
-                        <blockquote style="margin-top: 15px; font-style: italic;" class="project-text">
-                            97% of climate scientists agree that humans are causing global warming. <br> 
-                            But only 64% of adults believe global warming is caused by human activites.
-                        </blockquote>
                         <p class="project-text">
-                            This project investigates the factors that influence our consensus judgements given different evidence, whether that be amount of agreement, source of testimony, or topic of discussion. 
-                            A key aim of this project is to improve our understanding of how to communicate scientific findings on pressing issues such as climate change. 
-                            As such, I will run an experimental study and create a series of research-backed short video essays/animations to increase awareness on these topics. 
-                            This project is funded by a <a href="https://carnegie-trust.org/award-schemes/vacation-scholarships/" target="_blank" rel="noopener noreferrer">Carnegie Vacation Scholarship</a> (£3800) and the <a href="https://www.edinburghneuroscience.ed.ac.uk/scholarshipsfunding/scholarship-our-mind-programme" target="_blank" rel="noopener noreferrer">Our Minds Programme</a> (£1600).
+                            In my 2nd year I was a volunteer research assistant at the <a href="https://www.sarahcestanton.com/" target="_blank" rel="noopener noreferrer">Health and Relationship Processes (HARP) lab</a> where I worked on collecting data for a dyadic study investigating wellbeing within romantic relationships.
+                            I was also a research assistant for <a href="https://gretagandolfi.github.io/" target="_blank" rel="noopener noreferrer">Greta Gandolfi</a> where I annotated the linguistic features within conversations between humans and Ferhat (social robot).
                         </p>
-                        <p class="project-text" style=" width: 100%; left;">
-                            Experiment 1 &nbsp; 
-                            <a href="./projects/consensus24/consensus_exp1_poster.pdf"">poster</a> &nbsp;
-                            <a href="https://osf.io/8ywaj/" target="_blank" rel="noopener noreferrer">osf</a>
-                        </p>
-                        <p class="project-text">
-                            In the distant future, we plan to carry out follow-up experiments with different manipulations
-                            and look at naturalistic data from r/Showerthoughts or r/The10thDentist containing posts with wide agreement/disagreement. 
-                        </p>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-name">
-                            Identifying Unsafe Content in Role-Playing Video Game Dialogue
-                            <hr>
-                        </div>
-                        <div class="project-description">
-                            <img class="project-pic" style="aspect-ratio: 5 / 2; object-fit: cover; object-position: 50% 0;" src="./projects/games24/persona5.jpg" alt="persona5">
-                            <p class="project-text">
-                                I work in a team led by <a href="https://www.jingjieli.me/" target="_blank" rel="noopener noreferrer">Jingjie Li</a> exploring unsafe issues such as violence and abuse in games such as Persona 5. 
-                                I work mostly on the theory-building aspect of the pipeline, developing a taxonomy to categorise these issues for annotations.
-                                Our end goal is to explore how existing LLM’s fair when identifying unsafe content in video game dialogue. 
-                                We use data from the 
-                                <a href="https://correlation-machine.com/VideoGameDialogueCorpus/" target="_blank" rel="noopener noreferrer">Video Game Dialogue Corpus</a> and are funded by Edinburgh's 
-                                <a href="https://www.ed.ac.uk/news/2023/university-to-lead-new-era-of-generative-ai?utm_source=linkedin&utm_medium=organic_post&utm_campaign=cam_research_comms&utm_term=&utm_content=gail_ai_launch" target="_blank" rel="noopener noreferrer">Generative AI Laboratory (GAIL)</a>.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-name">
-                            Other projects
-                            <hr>
-                        </div>
-                        <div class="project-description">
-                            <p class="project-text">
-                                In my 2nd year I was a volunteer research assistant at the <a href="https://www.sarahcestanton.com/" target="_blank" rel="noopener noreferrer">Health and Relationship Processes (HARP) lab</a> where I worked on collecting data for a dyadic study investigating wellbeing within romantic relationships.
-                                I was also a research assistant for <a href="https://gretagandolfi.github.io/" target="_blank" rel="noopener noreferrer">Greta Gandolfi</a> where I annotated the linguistic features within conversations between humans and Ferhat (social robot).
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="socials-container">
-            <a class="footer-item" href="documents/JWZH-CV-2025-Nov.pdf">cv</a>
-            <a href="https://linkedin.com/in/joshua-hew-335374179" target="_blank" rel="noopener noreferrer">
-                <img class="footer-icon" src="./assets/linkedin.png" alt="My LinkedIn Profile"/>
-            </a>
-            <a href="https://github.com/J2hwz" target="_blank" rel="noopener noreferrer">
-                <img class="footer-icon" src="./assets/github.png" alt="My Github Profile"/>
-            </a>
-        </div>
-    </footer>
+    <footer id="footer"></footer>
 </body>
 
 </html>

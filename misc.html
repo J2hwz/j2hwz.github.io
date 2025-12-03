@@ -13,36 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     
     <!-- Loading js libraries -->
+    <script src="/libraries/jquery-3.7.1.min.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/static/libraries/jquery-3.7.1.min.js"></script>
 
     <title>Misc | Joshua Hew</title>
 </head>
 
 <body>
-    <header class="header-container">
-        <div class="title-container">
-            <div>
-                <p class="title-text">joshua w. z. hew</p>
-            </div>
-        </div>
-        <nav class="nav-container">
-            <div class="nav-item">
-                <a class="nav-hover" href="/index.html">about</a>
-            </div>
-            <div class="nav-item">
-                <a class="nav-hover" href="/research.html">research</a>
-            </div>
-            <div class="nav-item" style="font-weight: bold;">
-                miscellaneous
-            </div>
-            <div class="nav-item">
-                <a class="nav-hover dark-mode-button" onclick="toggleDarkMode()">darker</a>
-                <!-- &#127763; moon emoji -->
-                <!-- <button onclick="toggleDarkMode()">Toggle Dark Mode</button> -->
-            </div>
-        </nav>
-    </header>
+    <header id="header" class="header-container"></header>
     <main>
         <div class="misc-container">
             <h3>
@@ -83,17 +61,7 @@
         </div>
         
     </main>
-    <footer>
-        <div class="socials-container">
-            <a class="footer-item" href="documents/JWZH-CV-2025-Nov.pdf">cv</a>
-            <a href="https://linkedin.com/in/joshua-hew-335374179" target="_blank" rel="noopener noreferrer">
-                <img class="footer-icon" src="./assets/linkedin.png" alt="My LinkedIn Profile"/>
-            </a>
-            <a href="https://github.com/J2hwz" target="_blank" rel="noopener noreferrer">
-                <img class="footer-icon" src="./assets/github.png" alt="My Github Profile"/>
-            </a>
-        </div>
-    </footer>
+    <footer id="footer"></footer>
 </body>
 
 </html>
