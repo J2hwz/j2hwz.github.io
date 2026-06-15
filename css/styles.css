@@ -175,11 +175,11 @@ footer {
 
 .profile-pic {
     display: flex;
-    width: 800px;
-    aspect-ratio: 2 / 1;
+    width: 700px;
+    aspect-ratio: 5 / 3;
     object-fit: cover;
     margin: auto;
-    mask-image: linear-gradient(to top, transparent, #000 30%);
+    mask-image: linear-gradient(to top, transparent, #000 25%);
     margin-bottom: 25px;
 }
 

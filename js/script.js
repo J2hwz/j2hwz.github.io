@@ -2,8 +2,11 @@ var darkmode;
 
 // Load header and footer
 $(function(){
-  $("#header").load("./header.html"); 
-  $("#footer").load("./footer.html"); 
+  $("#header").load("./header.html", function() {
+    var btn = document.querySelector(".dark-mode-button");
+    if (btn) btn.textContent = localStorage.getItem('darkMode') === 'enabled' ? "lighter" : "darker";
+  });
+  $("#footer").load("./footer.html");
 });
 
 // Remember user's setting 
@@ -18,9 +21,13 @@ function toggleDarkMode() {
 document.addEventListener('DOMContentLoaded', (event) => {
     if (localStorage.getItem('darkMode') === 'enabled') {
         document.body.classList.add('dark-mode');
-        document.querySelector(".dark-mode-button").textContent = "lighter";
-    } else {
-        document.querySelector(".dark-mode-button").textContent = "darker";
+    }
+
+    // Pick a random landscape photo on each page load — add filenames here when adding new images
+    var pic = document.getElementById('landscape-pic');
+    if (pic) {
+        var landscapes = ['landscape1.jpg', 'landscape2.jpg', 'landscape3.jpg', 'landscape4.jpg'];
+        pic.src = './images/landscape/' + landscapes[Math.floor(Math.random() * landscapes.length)];
     }
 });
 
@@ -29,5 +36,3 @@ document.querySelector('.dark-mode-butto').addEventListener('click', function(ev
     event.preventDefault(); // Prevent the default link behavior
     toggleDarkMode();
 });
-
-// TODO retain "darker"/"lighter" text across pages
