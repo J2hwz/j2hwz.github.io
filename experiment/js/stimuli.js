@@ -1,4 +1,6 @@
 // Birthday block stimuli
+const birthdayAttentionTarget = 77;
+
 const birthdayNote = `<br><em>Note: you can assume that there are 365 possible birthdays in a year.</em>`;
 
 const birthdayPercentages = [25, 25, 50, 50, 75, 75];
@@ -15,10 +17,12 @@ const birthdayGroups = [
 const birthdayNs = [10, 20, 40];
 
 const birthdayProbabilities = (n, k) =>
-  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people share the same birthday?${birthdayNote}`;
+  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people share the same birthday?`;
 
 
 // Age block stimuli
+const ageAttentionTarget = 42;
+
 const ageNote = `<br><em>Note: you can assume that you only encounter people ages 0-84 in this room.</em>`;
 
 const agePercentages = [25, 25, 50, 50, 75, 75];
@@ -38,10 +42,12 @@ const ageGroups = [
 const ageNs = [10, 20, 40];
 
 const ageProbabilities = (n, k) =>
-  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people share the same age?${ageNote}`;
+  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people share the same age?`;
 
 
 // First names block stimuli
+const nameAttentionTarget = 13;
+
 const nameNote = `<br><em>Note: you can assume that there are around 4400 first names.</em>`;
 
 const namePercentages = [25, 25, 50, 50, 75, 75];
@@ -59,11 +65,13 @@ const nameGroups = [
 const nameNs = [100, 200, 400]; // Group sizes for first names probability block
 
 const nameProbabilities = (n, k) =>
-  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people share the same first name?${nameNote}`;
+  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people share the same first name?`;
 
 
 // City of origin block stimuli
-const cityNote = `<br><em>Note: you can assume that there are around 200 cities, and 4 constituent countries (England, Scotland, Wales, & Northern Ireland) in in the United Kingdom.</em>`;
+const cityAttentionTarget = 55;
+
+const cityNote = `<br><em>Note: you can assume that there are around 200 cities, and 4 constituent countries (England, Scotland, Wales, & Northern Ireland) in the United Kingdom.</em>`;
 
 const cityPercentages = [25, 25, 50, 50, 75, 75];
 
@@ -79,11 +87,13 @@ const cityGroups = [
 const cityNs = [5, 10, 20]; // Group sizes for city of origin probability block
 
 const cityProbabilities = (n, k) =>
-  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people have the same city of origin in the UK?${cityNote}`;
+  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people have the same city of origin in the UK?`;
 
 
 // Siblings block
-const siblingNote = `<br><em>Note: you can assume that there are around 4400 first names.</em>`;
+const siblingAttentionTarget = 29;
+
+const siblingNote = `<br><em>Note: you can assume that people have at most 8 siblings.</em>`;
 
 const siblingPercentages = [25, 50, 75];
 
@@ -93,7 +103,7 @@ const siblingGroups = [
   p => `How many people would you need in a room to have a <strong>${p}%</strong> chance that 4 people have the same number of siblings?${siblingNote}`,
 ];
 
-const siblingNs = [2,4,8]; // Group sizes for siblings probability block
+const siblingNs = [2, 4, 8]; // Group sizes for siblings probability block
 
 const siblingProbabilities = (n, k) =>
-  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people have the same number of siblings?${siblingNote}`;
+  `Given <strong>${n}</strong> people in a room, what do you think is the probability that <strong>${k}</strong> people have the same number of siblings?`;

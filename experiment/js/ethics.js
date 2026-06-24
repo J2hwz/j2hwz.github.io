@@ -2,14 +2,14 @@ const ethics = [
   {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-      <div style="padding: 80px 120px; text-align: left;">
+      <div style="padding: 80px 300px; text-align: left;">
         <img src="./assets/PPLS.png" alt="ex1" style="float: right; width: 400px; margin-bottom: 24px;">
         <br /><br />
         <h1>Information sheet for participants</h1>
         <br />
         <b>Study title:</b> Birthday problem decision-making (probably need some other name) <br />
         <b>Principal Investigator:</b> Zachary Horne (zachary.horne@ed.ac.uk) <br />
-        <b>Researcher collecting data:</b> Yee Huan Ong (email), Joshua Hew, Emily Line <br /><br />
+        <b>Researchers collecting data:</b> Yee Huan Ong (Y.H.Ong@sms.ed.ac.uk), Joshua Hew, Emily Line <br /><br />
 
         <p>
             <b>What is this document?</b>
@@ -26,13 +26,13 @@ const ethics = [
 
         <p>
             <b>Compensation.</b>
-            You will be paid £X for your participation in this study.
+            You will <b>NOT</b> be paid for your participation in this study.
         </p>
 
         <p>
             <b>Risks and benefits.</b>
             There are no known risks to participation in this study.
-            There are no tangible benefits to you, however you will be contributing to our knowledge about social cognition and epistemology.
+            There are no tangible benefits to you, however you will be contributing to our knowledge about cognitive psychology and belief change.
         </p>
 
         <p>
@@ -41,7 +41,7 @@ const ethics = [
             In order to safeguard your privacy, we will never share personal information (like names or dates of birth) with anyone outside the research team.
             Your data will be referred to by a unique participant number rather than by name.
             Please note that we will temporarily collect your IP address to prevent repeat participation, however we will never share this information with anyone outside the research team.
-            We will store your IP address using the University of Edinburghs secure encrypted data base and delete it upon completion of the study.
+            We will store your IP address using the University of Edinburgh's secure encrypted data base and delete it upon completion of the study.
             The anonymised data collected during this study will be used for research purposes only.
         </p>
 

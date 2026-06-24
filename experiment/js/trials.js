@@ -4,23 +4,23 @@
 // buildCategorySection() randomises the order of the stimuli within the blocks
 // It also randomises the order of the blocks within the section
 const birthdaySection = buildCategorySection(
-  'shared birthdays', birthdayNote, birthdayGroups, birthdayPercentages, birthdayProbabilities, birthdayNs
+  'shared birthdays', birthdayNote, birthdayGroups, birthdayPercentages, birthdayProbabilities, birthdayNs, birthdayAttentionTarget
 );
 
 const ageSection = buildCategorySection(
-  'shared ages', ageNote, ageGroups, agePercentages, ageProbabilities, ageNs
+  'shared ages', ageNote, ageGroups, agePercentages, ageProbabilities, ageNs, ageAttentionTarget
 );
 
 const nameSection = buildCategorySection(
-  'shared first names', nameNote, nameGroups, namePercentages, nameProbabilities, nameNs
+  'shared first names', nameNote, nameGroups, namePercentages, nameProbabilities, nameNs, nameAttentionTarget
 );
 
 const citySection = buildCategorySection(
-  'shared cities and countries of origin', cityNote, cityGroups, cityPercentages, cityProbabilities, cityNs
+  'shared cities and countries of origin', cityNote, cityGroups, cityPercentages, cityProbabilities, cityNs, cityAttentionTarget
 );
 
 const siblingSection = buildCategorySection(
-  'shared numbers of siblings', siblingNote, siblingGroups, siblingPercentages, siblingProbabilities, siblingNs
+  'shared numbers of siblings', siblingNote, siblingGroups, siblingPercentages, siblingProbabilities, siblingNs, siblingAttentionTarget
 );
 
 // Randomise order of all five sections

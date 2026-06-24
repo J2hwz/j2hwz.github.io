@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday Problem Experiment</title>
+
+  <!-- jsPsych core -->
+  <script src="https://unpkg.com/jspsych@7.3.4"></script>
+  <!-- Plugins -->
+  <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.3"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.3"></script>
+  <!-- jsPsych styles -->
+  <link rel="stylesheet" href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css">
+</head>
+<body>
+<script>
+
+  const jsPsych = initJsPsych();
+
+  // --- 1. Shuffle percentages ---
+  let percentages = jsPsych.randomization.shuffle([25, 25, 50, 50, 75, 75]);
+  console.log(percentages)
+
+  // --- 2. Define the 6 question templates ---
+  // Each is a function that accepts a percentage and returns the prompt string
+  const questions = [
+    p => `How many people would you need in a room to have a <strong>${p}%</strong> chance of 2 people sharing the same birthday?<br><em>Note: you can assume that there are 365 possible birthdays in a year.</em>`,
+    p => `How many people would you need in a room to have a <strong>${p}%</strong> chance of 3 people sharing the same birthday?<br><em>Note: you can assume that there are 365 possible birthdays in a year.</em>`,
+    p => `How many people would you need in a room to have a <strong>${p}%</strong> chance of 4 people sharing the same birthday?<br><em>Note: you can assume that there are 365 possible birthdays in a year.</em>`,
+    p => `How many people would you need in a room to have a <strong>${p}%</strong> chance of 2 people having birthdays within the same week?<br><em>Note: you can assume that there are 365 possible birthdays in a year.</em>`,
+    p => `How many people would you need in a room to have a <strong>${p}%</strong> chance of 3 people having birthdays within the same week?<br><em>Note: you can assume that there are 365 possible birthdays in a year.</em>`,
+    p => `How many people would you need in a room to have a <strong>${p}%</strong> chance of 4 people having birthdays within the same week?<br><em>Note: you can assume that there are 365 possible birthdays in a year.</em>`,
+  ];
+
+  // --- 3. Shuffle the question order ---
+  // Maybe shuffle with no repeats?
+  const shuffledQuestions = jsPsych.randomization.shuffle(questions);
+
+  // --- 4. Build one trial per question, pairing with shuffled percentages ---
+  const trials = shuffledQuestions.map((questionFn, i) => ({
+    type: jsPsychSurveyText,
+    questions: [
+      {
+        prompt: questionFn(percentages[i]),
+        placeholder: 'Enter a number',
+        required: true,
+      }
+    ]
+  }));
+
+  // --- 5. Welcome and end screens ---
+  const welcome = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
+      <p>Welcome to the experiment.</p>
+      <p>You will be asked 6 questions. For each one, enter your best guess as a number.</p>
+      <p>Press any key to begin.</p>
+    `
+  };
+
+  const end = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: '<p>That\'s everything — thank you!</p>'
+  };
+
+  // --- 6. Run ---
+  jsPsych.run([welcome, ...trials, end]);
+
+</script>
+</body>
+</html>
