@@ -16,7 +16,7 @@ const nameSection = buildCategorySection(
 );
 
 const citySection = buildCategorySection(
-  'shared cities and countries of origin', cityNote, cityGroups, cityPercentages, cityProbabilities, cityNs, cityAttentionTarget
+  'United Kingdom cities and countries of origin', cityNote, cityGroups, cityPercentages, cityProbabilities, cityNs, cityAttentionTarget
 );
 
 const siblingSection = buildCategorySection(

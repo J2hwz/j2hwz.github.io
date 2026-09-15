@@ -1,0 +1,18 @@
+.jspsych-display-element {
+    font-size: 20px;
+}
+
+.stimulus-note {
+    color: #4682B4;
+    font-size: 16px;
+}
+
+/* Overrides .stimulus-note's font-size just for the section-intro note in buildSectionIntro */
+.section-intro-note .stimulus-note {
+    font-size: 20px;
+}
+
+/* Adds breathing room below every survey-html-form trial's submit/Next/Finish button */
+#jspsych-survey-html-form-next {
+    margin-bottom: 32px;
+}

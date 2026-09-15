@@ -16,9 +16,9 @@ granTrials.splice(granCheckAt, 0, buildLikertAttentionCheck(granAttentionTarget)
 const idInstructions = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-    <div style="max-width: 600px; margin: auto; text-align: left;">
-      <p>You will now be shown a series of questions.</p>
-      <p>Some are statements about yourself to rate on a scale; others are numerical questions where you give your best answer. Please read each question carefully.</p>
+    <div style="text-align: left;">
+      <p>You will now be shown a series of questions, consisting of statements about yourself to rate on a scale. Please read each question carefully.</p>
+      <p>There are no right or wrong answers - just select the statements that best describe yourself.</p>
       <br>
       <p style="text-align: center;"><b>Press any key to begin.</b></p>
     </div>

@@ -4,14 +4,14 @@ const demographics = [
     preamble: '<h2>Demographics</h2>',
     html: `
       <style>
-        .demo-section { margin-bottom: 24px; }
+        .demo-section { margin-bottom: 48px; }
         .demo-section p { font-weight: bold; margin-bottom: 8px; }
         .demo-section label { display: block; margin-bottom: 4px; }
         .required { color: red; }
         textarea { width: 100%; box-sizing: border-box; }
       </style>
 
-      <div style="max-width: 620px; text-align: left;">
+      <div style="text-align: left;">
 
         <div class="demo-section">
           <p>Age <span class="required">*</span></p>
@@ -27,7 +27,7 @@ const demographics = [
 
         <div class="demo-section">
           <p>How easy did you find it to answer the questions in this study? <span class="required">*</span></p>
-          <div style="display: flex; gap: 16px; align-items: center;">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 80%;">
             <span style="font-size: 0.85em;">Very difficult</span>
             ${[1,2,3,4,5,6,7].map(n => `
               <label style="display: flex; flex-direction: column; align-items: center; gap: 4px;">

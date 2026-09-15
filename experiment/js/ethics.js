@@ -2,14 +2,14 @@ const ethics = [
   {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-      <div style="padding: 80px 300px; text-align: left;">
+      <div style="text-align: left;">
         <img src="./assets/PPLS.png" alt="ex1" style="float: right; width: 400px; margin-bottom: 24px;">
-        <br /><br />
+        <br /><br /><br />
         <h1>Information sheet for participants</h1>
         <br />
-        <b>Study title:</b> Birthday problem decision-making (probably need some other name) <br />
+        <b>Study title:</b> Judgements of Coincidences <br />
         <b>Principal Investigator:</b> Zachary Horne (zachary.horne@ed.ac.uk) <br />
-        <b>Researchers collecting data:</b> Yee Huan Ong (Y.H.Ong@sms.ed.ac.uk), Joshua Hew, Emily Line <br /><br />
+        <b>Researchers collecting data:</b> Yee Huan Ong (Y.H.Ong@sms.ed.ac.uk), Joshua Hew (joshua_hew@berkeley.edu), Emily Line (eneulin@ed.ac.uk) <br /><br />
 
         <p>
             <b>What is this document?</b>
@@ -18,7 +18,7 @@ const ethics = [
 
         <p>
             <b>Nature of the study.</b>
-            You are invited to participate in a study which involves answering questions to [XX].
+            You are invited to participate in a study which involves answering questions about everyday topics.
             Your responses will recorded.
             Once you finish, we may have some questions about you (e.g., age, gender).
             You will be given full instructions shortly.
@@ -64,7 +64,7 @@ const ethics = [
 
         <p>
             If you have any questions about what you have just read, please feel free to ask, or contact us later.
-            You can contact us by email at XX@ed.ac.uk.
+            You can contact us by email at zachary.horne@ed.ac.uk.
             This project has been approved by the PPLS Ethics committee.
             If you have questions or comments regarding your rights as a participant, please contact the School Research Ethics Convenor at or ppls.rec@ed.ac.uk
         </p>

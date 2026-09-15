@@ -16,42 +16,42 @@ const numeracyItems = [
   ),
   buildScaleItem(
     `How good are you at working with percentages?`,
-    ['Not at all<br>good', '2', '3', '4', '5', 'Extremely<br>good'],
+    ['0 - Not at<br>all good', '2', '3', '4', '5', '6 - Extremely<br>good'],
     'exp_1'
   ),
   buildScaleItem(
     `How good are you at working with fractions?`,
-    ['Not at all<br>good', '2', '3', '4', '5', 'Extremely<br>good'],
+    ['0 - Not at<br>all good', '2', '3', '4', '5', '6 - Extremely<br>good'],
     'exp_2'
   ),
   buildScaleItem(
     `How good are you at calculating a 15% tip?`,
-    ['Not at all<br>good', '2', '3', '4', '5', 'Extremely<br>good'],
+    ['0 - Not at<br>all good', '2', '3', '4', '5', '6 - Extremely<br>good'],
     'exp_3'
   ),
   buildScaleItem(
     `How good are you at figuring out how much a shirt will cost if it is 25% off?`,
-    ['Not at all<br>good', '2', '3', '4', '5', 'Extremely<br>good'],
+    ['0 - Not at<br>all good', '2', '3', '4', '5', '6 - Extremely<br>good'],
     'exp_4'
   ),
   buildScaleItem(
     `When reading the newspaper, how helpful do you find tables and graphs that are parts of a story?`,
-    ['Not at all<br>helpful', '2', '3', '4', '5', 'Extremely<br>helpful'],
+    ['0 - Not at<br>all helpful', '2', '3', '4', '5', '6 - Extremely<br>helpful'],
     'exp_5'
   ),
   buildScaleItem(
     `When people tell you the chance of something happening, do you prefer that they use words ("it rarely happens") or numbers ("there's a 1% chance")?`,
-    ['Always prefer<br>words', '2', '3', '4', '5', 'Always prefer<br>numbers'],
+    ['0 - Always prefer<br>words', '2', '3', '4', '5', '6 - Always prefer<br>numbers'],
     'exp_6'
   ),
   buildScaleItem(
     `When you hear a weather forecast, do you prefer predictions using percentages (e.g., "there will be a 20% chance of rain today") or predictions using only words (e.g., "there is a small chance of rain today")?`,
-    ['Always prefer<br>percentages', '2', '3', '4', '5', 'Always prefer<br>words'],
+    ['0 - Always prefer<br>percentages', '2', '3', '4', '5', '6 - Always prefer<br>words'],
     'num_use'
   ),
   buildScaleItem(
     `How often do you find numerical information to be useful?`,
-    ['Never', '2', '3', '4', '5', 'Very often'],
+    ['0 - Never', '2', '3', '4', '5', '6 - Very often'],
     'num_useful'
   ),
 ];
@@ -59,7 +59,7 @@ const numeracyItems = [
 const numeracyInstructions = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-    <div style="max-width: 600px; margin: auto; text-align: left;">
+    <div style="text-align: left;">
       <p>You will now be asked a series of questions about numbers and probability.</p>
       <p>For questions with a text box, enter your best numerical answer. For questions with a scale, select the option that best reflects your view.</p>
       <p>There are no right or wrong answers — just do your best.</p>

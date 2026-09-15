@@ -57,12 +57,12 @@ function buildProbabilityBlock(stimulusFn, ns, note) {
 
       // "Click anywhere" hint above the slider
       container.insertAdjacentHTML('beforebegin',
-        `<p style="font-size: 0.9em; color: #555; margin-bottom: 6px;">Click anywhere on the slider to respond.</p>`
+        `<p style="color: #828282; font-size: 16px; margin-bottom: 6px;">Click anywhere on the slider to respond.</p>`
       );
 
       // Note below the slider
       container.insertAdjacentHTML('afterend',
-        `<p style="font-size: 0.85em; color: #555; margin-top: 12px;">${noteText}</p>`
+        `<p class="stimulus-note" style="margin-top: 12px;">${noteText}</p>`
       );
 
       const slider = document.querySelector('.jspsych-slider');
@@ -81,9 +81,9 @@ function buildSectionIntro(description, note) {
   return {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-      <div style="max-width: 600px; margin: auto; text-align: left;">
+      <div style="text-align: left;">
         <p>The following questions will be about your intuitions regarding the occurrence of ${description} in a group of people.</p>
-        <p>${note.replace('<br>', '')}</p>
+        <p class="section-intro-note">${note.replace('<br>', '')}</p>
         <br>
         <p style="text-align: center;"><b>Press any key to continue.</b></p>
       </div>
@@ -102,8 +102,8 @@ function buildAttentionCheck(target) {
         prompt: (invalid
           ? `<p style="color: red; margin-bottom: 8px;">Incorrect. Please read the question carefully and try again.</p>`
           : '') +
-          `How many people would you need in a room to have a <strong>50%</strong> chance that no people share the same characteristic?` +
-          `<br><br><em>To make sure you are reading carefully, please type the number <strong>${target}</strong> in the box below instead of answering the question above.</em>`,
+          `How many people would you need in a room to have a <strong>50%</strong> chance that no people share the <i>same</i> characteristic?` +
+          `<br><span class="stimulus-note">To make sure you are reading carefully, please type the number <strong>${target}</strong> in the box below instead of answering the question above.</span>`,
         placeholder: 'Enter a number',
         required: true,
       }]
@@ -148,9 +148,9 @@ function buildLikertItem(statement, dataTag) {
     type: jsPsychSurveyHtmlForm,
     data: { [dataTag]: true },
     html: `
-      <div style="max-width: 650px; margin: auto; text-align: center;">
+      <div style="text-align: center;">
         <p style="font-size: 1.1em; margin-bottom: 32px;">${statement}</p>
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 650px; margin: 0 auto; margin-bottom: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin: 0 auto; margin-bottom: 32px;">
           ${likertLabels.map((label, i) => `
             <label style="display: flex; flex-direction: column; align-items: center; width: ${100 / 7}%; cursor: pointer; gap: 8px;">
               <input type="radio" name="response" value="${i + 1}" required>
@@ -164,17 +164,15 @@ function buildLikertItem(statement, dataTag) {
   };
 }
 
-const QUESTION_WIDTH = '650px';
-
 // Builds a horizontal radio-button scale with custom labels and arbitrary number of points
 function buildScaleItem(prompt, labels, itemLabel) {
   return {
     type: jsPsychSurveyHtmlForm,
     data: { numeracy: true, item: itemLabel },
     html: `
-      <div style="max-width: ${QUESTION_WIDTH}; margin: auto; text-align: center;">
+      <div style="text-align: center;">
         <p style="font-size: 1.1em; margin-bottom: 32px;">${prompt}</p>
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; width: ${QUESTION_WIDTH}; margin: 0 auto; margin-bottom: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin: 0 auto; margin-bottom: 32px;">
           ${labels.map((label, i) => `
             <label style="display: flex; flex-direction: column; align-items: center; width: ${100 / labels.length}%; cursor: pointer; gap: 8px;">
               <input type="radio" name="response" value="${i + 1}" required>
@@ -188,17 +186,27 @@ function buildScaleItem(prompt, labels, itemLabel) {
   };
 }
 
-// Builds a numeracy open-ended text-input trial
+// Builds a numeracy open-ended text-input trial; loops until the answer is digits with an optional trailing %
 function buildNumeracyTextItem(prompt, itemLabel) {
+  let invalid = false;
   return {
-    type: jsPsychSurveyText,
-    data: { numeracy: true, item: itemLabel },
-    questions: [{
-      prompt: `<div style="max-width: ${QUESTION_WIDTH}; margin: 0 auto;">${prompt}</div>`,
-      placeholder: 'Your answer',
-      required: true,
-      columns: 15,
+    timeline: [{
+      type: jsPsychSurveyText,
+      data: { numeracy: true, item: itemLabel },
+      questions: () => [{
+        prompt: (invalid
+          ? `<p style="color: red; margin-bottom: 8px;">Please enter a valid number (an optional decimal point and/or a % sign are okay).</p>`
+          : '') + `<div style="margin: 0 auto;">${prompt}</div>`,
+        placeholder: 'Your answer',
+        required: true,
+        columns: 15,
+      }]
     }],
+    loop_function: (data) => {
+      const val = Object.values(data.values()[0].response)[0].trim();
+      invalid = !/^\d+(\.\d+)?%?$/.test(val);
+      return invalid;
+    }
   };
 }
 
@@ -209,18 +217,19 @@ function buildDistributionQuizTrial(prompt, options, topic) {
     type: jsPsychSurveyHtmlForm,
     data: { distribution_quiz: true, topic },
     html: `
-      <div style="max-width: 800px; margin: auto; text-align: center;">
+      <div style="text-align: center;">
         <p style="font-size: 1.1em; margin-bottom: 24px;">${prompt}</p>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 0 auto;">
           ${shuffled.map(opt => `
             <label style="cursor: pointer; border: 2px solid #ddd; border-radius: 8px; padding: 12px; display: block;">
               <img src="${opt.image}" style="width: 100%; border-radius: 4px;">
-              <div style="margin-top: 10px;">
+              <div style="margin-top: 10px;asda">
                 <input type="radio" name="distribution_choice" value="${opt.value}" required>
               </div>
             </label>
           `).join('')}
         </div>
+        <br>
       </div>
     `,
     button_label: 'Next',
@@ -236,10 +245,10 @@ function buildLikertAttentionCheck(targetValue) {
       type: jsPsychSurveyHtmlForm,
       data: { attention_check: true },
       html: () => `
-        <div style="max-width: 650px; margin: auto; text-align: center;">
+        <div style="text-align: center;">
           ${invalid ? `<p style="color: red; margin-bottom: 8px;">Incorrect. Please read the instruction carefully and try again.</p>` : ''}
           <p style="font-size: 1.1em; margin-bottom: 32px;">To make sure you are reading carefully, please select <strong>${targetLabel}</strong> below.</p>
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 650px; margin: 0 auto; margin-bottom: 32px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin: 0 auto; margin-bottom: 32px;">
             ${likertLabels.map((label, i) => `
               <label style="display: flex; flex-direction: column; align-items: center; width: ${100 / 7}%; cursor: pointer; gap: 8px;">
                 <input type="radio" name="response" value="${i + 1}" required>

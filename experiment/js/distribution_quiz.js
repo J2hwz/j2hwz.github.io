@@ -4,7 +4,7 @@
 const distributionQuizSectionIntro = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-    <div style="max-width: 600px; margin: auto; text-align: left;">
+    <div style="text-align: left;">
       <h2>Distribution questions</h2>
       <p>In this next part of the study, you will be asked some questions about how everyday characteristics are distributed in the population.</p>
       <p>Before the questions begin, we will walk you through a short tutorial to help you read and understand the types of graphs you will be seeing.</p>
@@ -17,15 +17,15 @@ const distributionQuizSectionIntro = {
 const quizInstructionScreen1 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-    <div style="max-width: 650px; margin: auto; text-align: left;">
+    <div style="text-align: left;">
       <h2 style="text-align: center;">How to read the graphs</h2>
-      <p>Each graph shows how common different values are in a population.
+      <p>Each graph shows a <b>distribution</b>: patterns of how common each value is in a population.
          The <strong>height of each bar</strong> tells you how common that value is —
          a taller bar means that value occurs more often.</p>
-      <img src="../stimuli/figures/tutorial/tutorial_uniform.png"
-           style="width: 100%; margin: 16px 0; border-radius: 4px;">
+      <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_uniform.png"
+           style="display: block; width: 80%; margin: 16px auto; border-radius: 4px;">
       <p>For example, this graph shows which day of the week people were born on.
-         Because any day is equally likely, all the bars are roughly the same height.
+         Because each day is equally likely, all the bars are roughly the same height.
          This is called a <strong>uniform</strong> distribution.</p>
       <br>
       <p style="text-align: center;"><b>Press any key to continue.</b></p>
@@ -36,27 +36,27 @@ const quizInstructionScreen1 = {
 const quizInstructionScreen2 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-    <div style="max-width: 1000px; margin: auto; text-align: left;">
+    <div style="text-align: left;">
       <h2 style="text-align: center;">Distributions can have different shapes</h2>
       <p>Not all distributions look the same. Here are three other common shapes:</p>
       <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; margin: 20px 0;">
         <div style="text-align: center;">
-          <img src="../stimuli/figures/tutorial/tutorial_normal.png"
+          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_normal.png"
                style="width: 100%; border-radius: 4px;">
           <p style="margin-top: 8px;"><strong>Bell-shaped</strong><br>
              <span style="font-size: 0.9em;">Most values cluster around the middle, with fewer at the extremes.</span></p>
         </div>
         <div style="text-align: center;">
-          <img src="../stimuli/figures/tutorial/tutorial_right_skewed.png"
+          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_right_skewed.png"
                style="width: 100%; border-radius: 4px;">
           <p style="margin-top: 8px;"><strong>Right-skewed</strong><br>
-             <span style="font-size: 0.9em;">Most values are low, with a long tail stretching to the right.</span></p>
+             <span style="font-size: 0.9em;">Most values are low, but a small number of values are high.</span></p>
         </div>
         <div style="text-align: center;">
-          <img src="../stimuli/figures/tutorial/tutorial_left_skewed.png"
+          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_left_skewed.png"
                style="width: 100%; border-radius: 4px;">
           <p style="margin-top: 8px;"><strong>Left-skewed</strong><br>
-             <span style="font-size: 0.9em;">Most values are high, with a long tail stretching to the left.</span></p>
+             <span style="font-size: 0.9em;">Most values are high, but a small number of values are low.</span></p>
         </div>
       </div>
       <p style="text-align: center;"><b>Press any key to continue.</b></p>
@@ -74,22 +74,22 @@ const quizInstructionScreen3 = {
          the higher the curve, the more common that value.</p>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0;">
         <div style="text-align: center;">
-          <img src="../stimuli/figures/tutorial/tutorial_continuous_uniform.png"
+          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_continuous_uniform.png"
                style="width: 100%; border-radius: 4px;">
           <p style="margin-top: 8px;"><strong>Uniform</strong></p>
         </div>
         <div style="text-align: center;">
-          <img src="../stimuli/figures/tutorial/tutorial_continuous_normal.png"
+          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_continuous_normal.png"
                style="width: 100%; border-radius: 4px;">
           <p style="margin-top: 8px;"><strong>Bell-shaped</strong></p>
         </div>
         <div style="text-align: center;">
-          <img src="../stimuli/figures/tutorial/tutorial_continuous_right_skewed.png"
+          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_continuous_right_skewed.png"
                style="width: 100%; border-radius: 4px;">
           <p style="margin-top: 8px;"><strong>Right-skewed</strong></p>
         </div>
         <div style="text-align: center;">
-          <img src="../stimuli/figures/tutorial/tutorial_continuous_left_skewed.png"
+          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_continuous_left_skewed.png"
                style="width: 100%; border-radius: 4px;">
           <p style="margin-top: 8px;"><strong>Left-skewed</strong></p>
         </div>
@@ -102,7 +102,7 @@ const quizInstructionScreen3 = {
 const distributionQuizIntro = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-    <div style="max-width: 600px; margin: auto; text-align: left;">
+    <div style="text-align: left;">
       <p>You will now see five questions. For each one, select the plot that you think best
          describes how that characteristic is distributed in the real world.</p>
       <br>
