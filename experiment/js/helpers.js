@@ -76,6 +76,19 @@ function buildProbabilityBlock(stimulusFn, ns, note) {
   return jsPsych.randomization.shuffle(questions);
 }
 
+// Builds an html-keyboard-response page that ignores keypresses for delayMs before accepting one.
+// Two back-to-back trials with identical stimulus: the first is untimed-input (NO_KEYS) with a fixed
+// duration, the second is normal (ALL_KEYS) — visually seamless, but the participant can't skip past
+// it early, so they can't blindly click through instructions.
+function buildDelayedInstructionScreen(stimulus, delayMs = 2000) {
+  return {
+    timeline: [
+      { type: jsPsychHtmlKeyboardResponse, stimulus, choices: "NO_KEYS", trial_duration: delayMs },
+      { type: jsPsychHtmlKeyboardResponse, stimulus, choices: "ALL_KEYS" },
+    ]
+  };
+}
+
 // Builds the keyboard-response intro screen for a category section
 function buildSectionIntro(description, note) {
   return {

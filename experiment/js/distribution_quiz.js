@@ -5,8 +5,8 @@ const distributionQuizSectionIntro = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <div style="text-align: left;">
-      <h2>Distribution questions</h2>
-      <p>In this next part of the study, you will be asked some questions about how everyday characteristics are distributed in the population.</p>
+      <h2>Reading graphs</h2>
+      <p>In this next part of the study, you will be asked some questions about how common different things are among people.</p>
       <p>Before the questions begin, we will walk you through a short tutorial to help you read and understand the types of graphs you will be seeing.</p>
       <br>
       <p style="text-align: center;"><b>Press any key to begin the tutorial.</b></p>
@@ -14,90 +14,56 @@ const distributionQuizSectionIntro = {
   `
 };
 
-const quizInstructionScreen1 = {
-  type: jsPsychHtmlKeyboardResponse,
-  stimulus: `
+const quizInstructionScreen1 = buildDelayedInstructionScreen(`
+  <div style="text-align: left;">
+    <h2 style="text-align: center;">How to read the graphs</h2>
+    <p>Each graph shows a <b>distribution</b>: patterns of how common each value is in a population.
+       The <strong>height of each bar</strong> tells you how common that value is —
+       a taller bar means that value occurs more often.</p>
+    <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_uniform.png"
+         style="display: block; width: 80%; margin: 16px auto; border-radius: 4px;">
+    <p>For example, this graph shows which day of the week people were born on.
+       Because each day is equally likely, all the bars are roughly the same height.
+       This is called a <strong>uniform</strong> distribution.</p>
+    <br>
+    <p style="text-align: center;"><b>Press any key to continue.</b></p>
+  </div>
+`);
+
+const bellShapedInstructionScreen = buildDelayedInstructionScreen(`
+  <div style="text-align: left;">
+    <h2 style="text-align: center;">Distributions can have different shapes</h2>
+    <p>Not all distributions look the same. This one is <b>bell-shaped</b>:</p>
+    <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_normal.png"
+         style="display: block; width: 80%; margin: 16px auto; border-radius: 4px;">
+    <p>Most values cluster around the middle, with fewer at the extremes.</p>
+    <br>
+    <p style="text-align: center;"><b>Press any key to continue.</b></p>
+  </div>
+`);
+
+// Three worked examples each of right- and left-skewed distributions, built from different underlying
+// mechanisms (linear, power, beta) to show that the same skew pattern can look visually different.
+const SKEW_MECHANISMS = ['linear', 'power', 'beta'];
+
+const SKEW_DIRECTIONS = [
+  { key: 'right', label: 'Right-skewed', description: 'most values are low, but a small number of values are high' },
+  { key: 'left', label: 'Left-skewed', description: 'most values are high, but a small number of values are low' },
+];
+
+const skewExampleInstructionScreens = SKEW_DIRECTIONS.flatMap(({ key, label, description }) =>
+  SKEW_MECHANISMS.map((mechanism, i) => buildDelayedInstructionScreen(`
     <div style="text-align: left;">
-      <h2 style="text-align: center;">How to read the graphs</h2>
-      <p>Each graph shows a <b>distribution</b>: patterns of how common each value is in a population.
-         The <strong>height of each bar</strong> tells you how common that value is —
-         a taller bar means that value occurs more often.</p>
-      <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_uniform.png"
+      <h2 style="text-align: center;">${label} distributions (example ${i + 1} of ${SKEW_MECHANISMS.length})</h2>
+      <p>Skewed distributions can be built in different ways, but the same pattern holds:
+         <b>${description}</b>.</p>
+      <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_${key}_skewed_${mechanism}.png"
            style="display: block; width: 80%; margin: 16px auto; border-radius: 4px;">
-      <p>For example, this graph shows which day of the week people were born on.
-         Because each day is equally likely, all the bars are roughly the same height.
-         This is called a <strong>uniform</strong> distribution.</p>
       <br>
       <p style="text-align: center;"><b>Press any key to continue.</b></p>
     </div>
-  `
-};
-
-const quizInstructionScreen2 = {
-  type: jsPsychHtmlKeyboardResponse,
-  stimulus: `
-    <div style="text-align: left;">
-      <h2 style="text-align: center;">Distributions can have different shapes</h2>
-      <p>Not all distributions look the same. Here are three other common shapes:</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; margin: 20px 0;">
-        <div style="text-align: center;">
-          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_normal.png"
-               style="width: 100%; border-radius: 4px;">
-          <p style="margin-top: 8px;"><strong>Bell-shaped</strong><br>
-             <span style="font-size: 0.9em;">Most values cluster around the middle, with fewer at the extremes.</span></p>
-        </div>
-        <div style="text-align: center;">
-          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_right_skewed.png"
-               style="width: 100%; border-radius: 4px;">
-          <p style="margin-top: 8px;"><strong>Right-skewed</strong><br>
-             <span style="font-size: 0.9em;">Most values are low, but a small number of values are high.</span></p>
-        </div>
-        <div style="text-align: center;">
-          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_left_skewed.png"
-               style="width: 100%; border-radius: 4px;">
-          <p style="margin-top: 8px;"><strong>Left-skewed</strong><br>
-             <span style="font-size: 0.9em;">Most values are high, but a small number of values are low.</span></p>
-        </div>
-      </div>
-      <p style="text-align: center;"><b>Press any key to continue.</b></p>
-    </div>
-  `
-};
-
-const quizInstructionScreen3 = {
-  type: jsPsychHtmlKeyboardResponse,
-  stimulus: `
-    <div style="max-width: 750px; margin: auto; text-align: left;">
-      <h2 style="text-align: center;">From bars to curves</h2>
-      <p>The graphs in this section look a little different. Instead of separate bars,
-         they use <strong>smooth curves</strong>. However, the shapes work <b>exactly the same way</b>:
-         the higher the curve, the more common that value.</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0;">
-        <div style="text-align: center;">
-          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_continuous_uniform.png"
-               style="width: 100%; border-radius: 4px;">
-          <p style="margin-top: 8px;"><strong>Uniform</strong></p>
-        </div>
-        <div style="text-align: center;">
-          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_continuous_normal.png"
-               style="width: 100%; border-radius: 4px;">
-          <p style="margin-top: 8px;"><strong>Bell-shaped</strong></p>
-        </div>
-        <div style="text-align: center;">
-          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_continuous_right_skewed.png"
-               style="width: 100%; border-radius: 4px;">
-          <p style="margin-top: 8px;"><strong>Right-skewed</strong></p>
-        </div>
-        <div style="text-align: center;">
-          <img src="${DISTRIBUTION_FIGURES_PATH}/tutorial/tutorial_continuous_left_skewed.png"
-               style="width: 100%; border-radius: 4px;">
-          <p style="margin-top: 8px;"><strong>Left-skewed</strong></p>
-        </div>
-      </div>
-      <p style="text-align: center;"><b>Press any key to continue.</b></p>
-    </div>
-  `
-};
+  `))
+);
 
 const distributionQuizIntro = {
   type: jsPsychHtmlKeyboardResponse,
@@ -114,8 +80,8 @@ const distributionQuizIntro = {
 const distributionQuiz = [
   distributionQuizSectionIntro,
   quizInstructionScreen1,
-  quizInstructionScreen2,
-  quizInstructionScreen3,
+  bellShapedInstructionScreen,
+  ...skewExampleInstructionScreens,
   distributionQuizIntro,
   ...jsPsych.randomization.shuffle(
     distributionQuizItems.map(item =>

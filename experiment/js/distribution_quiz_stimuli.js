@@ -9,20 +9,20 @@ const distributionQuizItems = [
     topic: 'birthday',
     prompt: 'Which of the following best describes how common different birthdays are across the days of the year?',
     options: [
-      { image: `${DISTRIBUTION_FIGURES_PATH}/birthday/birthday_uniform.png`,    value: 'uniform'    },
-      { image: `${DISTRIBUTION_FIGURES_PATH}/birthday/birthday_normal.png`,     value: 'normal'     },
-      { image: `${DISTRIBUTION_FIGURES_PATH}/birthday/birthday_power.png`,      value: 'power'      },
-      { image: `${DISTRIBUTION_FIGURES_PATH}/birthday/birthday_noisy.png`, value: 'noisy_uniform' },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/birthday/birthday_uniform.png`,     value: 'uniform'     },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/birthday/birthday_normal.png`,      value: 'normal'      },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/birthday/birthday_linear_left.png`, value: 'linear_left' },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/birthday/birthday_linear_right.png`, value: 'linear_right' },
     ],
   },
   {
     topic: 'age',
     prompt: 'Which of the following best describes how common different ages (0–84) are in the general population?',
     options: [
-      { image: `${DISTRIBUTION_FIGURES_PATH}/age/age_uniform.png`,     value: 'uniform'     },
-      { image: `${DISTRIBUTION_FIGURES_PATH}/age/age_power.png`,       value: 'power'       },
-      { image: `${DISTRIBUTION_FIGURES_PATH}/age/age_linear_right.png`,  value: 'linear_right'  },
-      { image: `${DISTRIBUTION_FIGURES_PATH}/age/age_linear_left.png`, value: 'linear_left' },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/age/age_uniform.png`,      value: 'uniform'      },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/age/age_normal.png`,       value: 'normal'       },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/age/age_linear_right.png`, value: 'linear_right' },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/age/age_linear_left.png`,  value: 'linear_left'  },
     ],
   },
   {
@@ -49,10 +49,10 @@ const distributionQuizItems = [
     topic: 'siblings',
     prompt: 'Which of the following best describes how many siblings people have?',
     options: [
-      { image: `${DISTRIBUTION_FIGURES_PATH}/siblings/siblings_power.png`,             value: 'power'             },
-      { image: `${DISTRIBUTION_FIGURES_PATH}/siblings/siblings_noisy_uniform.png`,     value: 'noisy_uniform'     },
-      { image: `${DISTRIBUTION_FIGURES_PATH}/siblings/siblings_normal.png`,            value: 'normal'            },
-      { image: `${DISTRIBUTION_FIGURES_PATH}/siblings/siblings_actual.png`, value: 'actual' },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/siblings/siblings_uniform.png`,         value: 'uniform'      },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/siblings/siblings_linear_decrease.png`, value: 'linear_left'  },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/siblings/siblings_linear_increase.png`, value: 'linear_right' },
+      { image: `${DISTRIBUTION_FIGURES_PATH}/siblings/siblings_actual.png`,          value: 'actual'       },
     ],
   },
 ];
